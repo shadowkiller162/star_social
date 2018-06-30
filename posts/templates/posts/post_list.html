@@ -1,0 +1,12 @@
+{% extends "posts/post_base.html" %}
+{% block post_content %}
+  <div class="col-md-8">
+    {% if post_list.count == 0 %}
+      <h3>No Post in this Group!</h3>
+    {% else %}
+      {% for post in post_list %}
+        {% include "posts/_post.html" %}
+      {% endfor %}
+    {% endif %}
+  </div>
+{% endblock %}
